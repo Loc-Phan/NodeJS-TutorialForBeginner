@@ -1,0 +1,29 @@
+extends ../layouts/general
+block content
+    .container-fluid.my-5
+      .row
+        .col-8.offset-2
+          .card
+            .card-header.bg-primary.text-white.text-uppercase Users
+            .card-body
+              .users.my-3 
+                h2.text-center.text-info.my-3 Show user
+                if users !== null
+                  table.table.table-bordered
+                    thead
+                      tr.bg-info.text-white
+                        th  Name
+                        th  Email
+                        th  Age
+                        th  Action
+                    tbody
+                      tr
+                        td=  user.name 
+                        td=  user.email
+                        td=  user.age 
+                        td
+                          a.btn.btn-info(href="/users/" + user.id) View
+                else
+                  p No user to display
+              a.btn.btn-primary(href="/users") Previous
+

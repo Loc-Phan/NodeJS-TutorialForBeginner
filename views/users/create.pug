@@ -1,0 +1,32 @@
+extends ../layouts/general
+block content
+    .container-fluid.my-5
+      .row
+        .col-8.offset-2
+          .card
+            .card-header.bg-primary.text-white.text-uppercase Users
+            .card-body
+              form.seach-form(action="/users/create",method="POST")
+                .container
+                  h2 Create user
+                  .row
+                    .col-4
+                      .form-group
+                        label(for='name') Name
+                        input#name.form-control(name="name", type='text')
+                    .col-4
+                      .form-group
+                        label(for='email') Email
+                        input#email.form-control(name="email", type='text')
+                    .col-4
+                      .form-group
+                        label(for='age') Age
+                        input#age.form-control(name="age", type='number')
+                    .col-6
+                      button.btn.btn-primary(type='submit') Create
+                    .col-6
+                      a.btn.btn-primary(href="/users") Previous
+
+
+
+
